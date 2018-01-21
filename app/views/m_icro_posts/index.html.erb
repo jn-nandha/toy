@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>M Icro Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @m_icro_posts.each do |m_icro_post| %>
+      <tr>
+        <td><%= m_icro_post.content %></td>
+        <td><%= m_icro_post.user_id %></td>
+        <td><%= link_to 'Show', m_icro_post %></td>
+        <td><%= link_to 'Edit', edit_m_icro_post_path(m_icro_post) %></td>
+        <td><%= link_to 'Destroy', m_icro_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New M Icro Post', new_m_icro_post_path %>
